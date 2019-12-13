@@ -1,4 +1,3 @@
-
 function Clock() {
     var day = new Date();
     var hours = day.getHours();
