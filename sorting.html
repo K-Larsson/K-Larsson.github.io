@@ -25,14 +25,23 @@
                 </ul>
             </div>
         </div>
-        <form id="form" onsubmit="bubbleSort()">
-            <input type="number" name="amountOfCells">
-            <input type="number" name="amountOfCells">
-            <input type="submit" value="Submit">
-        </form>
-        <canvas id="canvas" width="500" height="500"></canvas>
+        <div id="sortingContainer">
+            <form id="form" onsubmit="sorting()">
+                <input type="radio" name="algorithm" value="BubbleSort">BubbleSort
+                <input type="radio" name="algorithm" value="MergeSort">MergeSort
+                <input type="radio" name="algorithm" value="InsertionSort">InsertionSort
+                <input type="radio" name="algorithm" value="ShellSort">ShellSort
+                <input type="radio" name="algorithm" value="SelectionSort">SelectionSort<br>
+                <input type="number" name="amountOfCells">
+                <input type="number" name="amountOfCells"><br>
+                <input type="button" value="Random" onclick="RandomNumbers();"><br>
+                <input type="reset" value="Reset">
+                <input type="submit" value="Submit">
+            </form>
+            <canvas id="canvas" width="500" height="500"></canvas>
+        </div>
     </div>
     <script src="js/clock.js"></script>
-    <script src="js/bubbleSort.js"></script>
+    <script src="js/sorting.js"></script>
 </body>
 </html>

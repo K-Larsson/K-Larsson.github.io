@@ -1,8 +1,9 @@
-#inputContainer {
-background: yellow;
+#sortingContainer {
+margin: 10px 0px 0px 0px;
 }
 
 canvas {
 margin: 10px 0px 0px 0px;
 border: 1px solid white;
+background: #000000;
 }
