@@ -20,18 +20,18 @@
             </div>
             <div id="nav">
                 <ul>
-                  <li><a id="active" href="index.html">Index</a></li>
-                  <li><a href="sorting.html">Sorting</a></li>
+                  <li><a href="index.html">Index</a></li>
+                  <li><a id="active" href="sorting.html">Sorting</a></li>
                 </ul>
             </div>
         </div>
         <div id="sortingContainer">
             <form id="form" onsubmit="sorting()">
-                <input type="radio" name="algorithm" value="BubbleSort">BubbleSort
-                <input type="radio" name="algorithm" value="MergeSort">MergeSort
-                <input type="radio" name="algorithm" value="InsertionSort">InsertionSort
-                <input type="radio" name="algorithm" value="ShellSort">ShellSort
-                <input type="radio" name="algorithm" value="SelectionSort">SelectionSort<br>
+                <input type="radio" id="radioBubbleSort" name="sortingAlgorithm">BubbleSort
+                <input type="radio" id="radioMergeSort" name="sortingAlgorithm">MergeSort
+                <input type="radio" id="radioInsertionSort" name="sortingAlgorithm" checked="checked">InsertionSort
+                <input type="radio" id="radioShellSort" name="sortingAlgorithm">ShellSort
+                <input type="radio" id="radioSelectionSort" name="sortingAlgorithm">SelectionSort<br>
                 <input type="number" name="amountOfCells">
                 <input type="number" name="amountOfCells"><br>
                 <input type="button" value="Random" onclick="RandomNumbers();"><br>
