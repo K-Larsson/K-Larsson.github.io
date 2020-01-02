@@ -1,5 +1,12 @@
-#sortingContainer {
-margin: 10px 0px 0px 0px;
+#sortingInfo {
+margin-bottom: 10px;
+text-align: center;
+}
+
+input[type=button], input[type=reset] {
+display: inline-block;
+width: 20%;
+font-size: 16px;
 }
 
 canvas {

@@ -22,23 +22,30 @@
                 <ul>
                   <li><a href="index.html">Index</a></li>
                   <li><a id="active" href="sorting.html">Sorting</a></li>
+                  <li><a href="profile.html">Profile</a></li>
                 </ul>
             </div>
         </div>
         <div id="sortingContainer">
+            <p id="sortingInfo">Pick an algorithm and press sort!<br>(some doesn't work properly yet)</p>
             <form id="form" onsubmit="sorting()">
-                <input type="radio" id="radioBubbleSort" name="sortingAlgorithm">BubbleSort
+                <input type="radio" id="radioBubbleSort" name="sortingAlgorithm" checked="checked">BubbleSort
                 <input type="radio" id="radioMergeSort" name="sortingAlgorithm">MergeSort
-                <input type="radio" id="radioInsertionSort" name="sortingAlgorithm" checked="checked">InsertionSort
+                <input type="radio" id="radioInsertionSort" name="sortingAlgorithm">InsertionSort
                 <input type="radio" id="radioShellSort" name="sortingAlgorithm">ShellSort
                 <input type="radio" id="radioSelectionSort" name="sortingAlgorithm">SelectionSort<br>
-                <input type="number" name="amountOfCells">
-                <input type="number" name="amountOfCells"><br>
-                <input type="button" value="Random" onclick="RandomNumbers();"><br>
+                <input type="button" value="Sort" onclick="RandomNumbers();"><br>
                 <input type="reset" value="Reset">
-                <input type="submit" value="Submit">
+                <!--<input type="submit" value="Submit">-->
             </form>
             <canvas id="canvas" width="500" height="500"></canvas>
+        </div>
+        <div id="footer">
+            <p class="footer-text">Uhh, that stuff will be here, at some point, I think... Maybe, time will tell I guess</p>
+            <p class="footer-link">Send me a mail <a href="mailto:karl.arbete.larsson@gmail.com">here's the address<span class="footer-hover">Click me!</span></a></p>
+            <p class="footer-link">Find me on <a href="https://www.linkedin.com/in/karl-larsson-103499186/">LinkedIn<span class="footer-hover">Click me!</span></a></p>
+            <p class="footer-text">No copyright</p>
+            <p class="footer-text">No trademark</p>
         </div>
     </div>
     <script src="js/clock.js"></script>
