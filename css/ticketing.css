@@ -1,0 +1,15 @@
+.card {
+border: solid yellow 3px;
+}
+
+.cardName {
+border: 2px solid cyan;
+}
+
+.cardInfo {
+border: 2px solid lightgreen;
+}
+
+.cardFeature {
+border: 2px solid white;
+}

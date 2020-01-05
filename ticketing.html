@@ -5,7 +5,7 @@
     <title>Sorting</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/universal.css">
-    <link rel="stylesheet" type="text/css" href="css/sorting.css">
+    <link rel="stylesheet" type="text/css" href="css/ticketing.css">
     <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
 </head>
 <body onload="Clock()">
@@ -21,25 +21,25 @@
             <div id="nav">
                 <ul>
                   <li><a href="index.html">Index</a></li>
-                  <li><a id="active" href="sorting.html">Sorting</a></li>
+                  <li><a href="sorting.html">Sorting</a></li>
                   <li><a href="profile.html">Profile</a></li>
-                  <li><a href="ticketing.html">ITS</a></li>
+                  <li><a id="active" href="ticketing.html">ITS</a></li>
                 </ul>
             </div>
         </div>
-        <div id="sortingContainer">
-            <p id="sortingInfo">Pick an algorithm and press sort!<br>(some doesn't work properly yet)</p>
-            <form id="form" onsubmit="sorting()">
-                <input type="radio" id="radioBubbleSort" name="sortingAlgorithm" checked="checked">BubbleSort
-                <input type="radio" id="radioMergeSort" name="sortingAlgorithm">MergeSort
-                <input type="radio" id="radioInsertionSort" name="sortingAlgorithm">InsertionSort
-                <input type="radio" id="radioShellSort" name="sortingAlgorithm">ShellSort
-                <input type="radio" id="radioSelectionSort" name="sortingAlgorithm">SelectionSort<br>
-                <input type="button" value="Sort" onclick="RandomNumbers();"><br>
-                <input type="reset" value="Reset">
-                <!--<input type="submit" value="Submit">-->
-            </form>
-            <canvas id="canvas" width="500" height="500"></canvas>
+        <div id="container">
+            <button id="createCard" class="button">Create Card</button>
+            <div class="card">
+                <div class="cardName">
+                    <p class="cardNameText">Name</p>
+                </div>
+                <div class="cardInfo">
+                    <p class="cardInfoText">Some info</p>
+                </div>
+                <div class="cardFeature">
+                    <p class="cardFeatureText">#bug</p>
+                </div>
+            </div>
         </div>
         <div id="footer">
             <p class="footer-text">Uhh, that stuff will be here, at some point, I think... Maybe, time will tell I guess</p>
@@ -49,7 +49,8 @@
             <p class="footer-text">No trademark</p>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/clock.js"></script>
-    <script src="js/sorting.js"></script>
+    <script src="js/ticketing.js"></script>
 </body>
 </html>
