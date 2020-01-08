@@ -19,12 +19,13 @@ height: 200px;
 .card {
 display: flex;
 justify-content: space-between;
+padding: 5px;
 box-shadow: 0 0 5px #000000;
 }
 
 .cardText {
 width: 100%;
-border: 2px solid green;
+/*border: 2px solid green;*/
 }
 
 .cardName {
@@ -37,7 +38,7 @@ border: 2px solid green;
 }
 
 .editButton {
-border: 2px solid yellow;
+/*border: 2px solid yellow;*/
 padding: 0px 10px;
 display: inline-block;
 cursor: pointer;
@@ -52,8 +53,7 @@ transition: 0.4s;
 }
 
 .change .bar1 {
--webkit-transform: rotate(-45deg) translate(-9px, 6px);
-transform: rotate(-45deg) translate(-9px, 6px);
+transform: rotate(-45deg) translate(-8px, 13px) scaleX(2);
 }
 
 .change .bar2 {
@@ -61,6 +61,5 @@ opacity: 0;
 }
 
 .change .bar3 {
--webkit-transform: rotate(45deg) translate(-8px, -8px);
-transform: rotate(45deg) translate(-8px, -8px);
+transform: rotate(45deg) translate(-7px, 0px);
 }

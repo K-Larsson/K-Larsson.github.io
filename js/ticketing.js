@@ -13,10 +13,10 @@ var template = `<div id="" class='card' draggable='true' ondragstart='drag(event
                             <p class='cardFeatureText'>#bug</p>
                         </div>
                     </div>
-                    <div id="" class='editButton' onclick="menu(this)">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
+                    <div id="" class='editButton' onclick='menu(this)'>
+                        <div class='bar1'></div>
+                        <div class='bar2'></div>
+                        <div class='bar3'></div>
                     </div>
                 </div>`;
 
@@ -41,7 +41,7 @@ function generateTemplate() {
     tmp = template.substring(0, searchIndex);
     tmp += "card" + numberOfCards;
     searchIndex = nthIndex(template, '"', 3) + 1;
-    tmp = template.substring(0, searchIndex);
+    tmp += template.substring(0, searchIndex);
     tmp += "editCard" + numberOfCards;
     tmp += template.substring(searchIndex);
     templates[numberOfCards] = tmp;
@@ -60,8 +60,12 @@ function nthIndex(str, query, n) {
     return i;
 }
 
-function menu(ev) {
-    ev.classList.toggle("change");
+function menu(el) {
+    el.classList.toggle("change");
+    /*tmp = el.parentElement.children[0].children[0].innerHTML;
+    el.parentElement.children[0].children[0].innerHTML = "<input type='text' placeholder=" + tmp.slice(3, tmp.length-4) + " name='cardNameText'>";
+    console.log(tmp.slice(3, tmp.length-4));
+    console.log(tmp.slice(3));*/
 }
 
 function allowDrop(ev) {
@@ -80,7 +84,6 @@ function drop(ev) {
         /*ev.target.innerHTML += document.getElementById(data);*/
     }
     catch(error) {
-        console.error("Did you just try to put a card inside another card?");
         /*console.error("Error: " + error.name + " - " + error.message);*/
     }
 }
