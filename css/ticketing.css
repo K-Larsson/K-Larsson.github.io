@@ -1,15 +1,66 @@
+#container {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+
+#container1 {
+border-right: 2px solid black;
+width: 49%;
+height: 200px;
+}
+
+#container2 {
+border-left: 2px solid white;
+width: 49%;
+height: 200px;
+}
+
 .card {
-border: solid yellow 3px;
+display: flex;
+justify-content: space-between;
+box-shadow: 0 0 5px #000000;
+}
+
+.cardText {
+width: 100%;
+border: 2px solid green;
 }
 
 .cardName {
-border: 2px solid cyan;
 }
 
 .cardInfo {
-border: 2px solid lightgreen;
 }
 
 .cardFeature {
-border: 2px solid white;
+}
+
+.editButton {
+border: 2px solid yellow;
+padding: 0px 10px;
+display: inline-block;
+cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+width: 10px;
+height: 5px;
+background-color: #000000;
+margin: 6px 0;
+transition: 0.4s;
+}
+
+.change .bar1 {
+-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+opacity: 0;
+}
+
+.change .bar3 {
+-webkit-transform: rotate(45deg) translate(-8px, -8px);
+transform: rotate(45deg) translate(-8px, -8px);
 }
