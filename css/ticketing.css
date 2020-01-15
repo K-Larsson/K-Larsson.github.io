@@ -4,6 +4,15 @@ flex-wrap: wrap;
 justify-content: space-between;
 }
 
+#buttonContainer {
+display: flex;
+flex-wrap: wrap;
+}
+
+#buttonContainer button {
+margin-right: 10px;
+}
+
 #container1 {
 border-right: 2px solid black;
 width: 49%;
@@ -37,14 +46,17 @@ width: 100%;
 .cardFeature {
 }
 
-.editButton {
-/*border: 2px solid yellow;*/
+textarea {
+display: flex;
+}
+
+.cardEditButton {
 padding: 0px 10px;
 display: inline-block;
 cursor: pointer;
 }
 
-.bar1, .bar2, .bar3 {
+.editBar1, .editBar2, .editBar3 {
 width: 10px;
 height: 5px;
 background-color: #000000;
@@ -52,14 +64,14 @@ margin: 6px 0;
 transition: 0.4s;
 }
 
-.change .bar1 {
+.change .editBar1 {
 transform: rotate(-45deg) translate(-8px, 13px) scaleX(2);
 }
 
-.change .bar2 {
+.change .editBar2 {
 opacity: 0;
 }
 
-.change .bar3 {
+.change .editBar3 {
 transform: rotate(45deg) translate(-7px, 0px);
 }
