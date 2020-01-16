@@ -1,16 +1,16 @@
 var tmp, i, data, length, searchIndex, elementHeight;
 var numberOfCards = 0;
-var templates = []
+var templates = [], classes = [];
 var template = `<div id="" class='card' draggable='true' ondragstart='drag(event)'>
                     <div class='cardText'>
                         <div class='cardName'>
-                            <p data-editable class='cardNameText'>Name</p>
+                            <p class='cardNameText'>Name</p>
                         </div>
                         <div class='cardInfo'>
-                            <p data-editable class='cardInfoText'>Some info</p>
+                            <p class='cardInfoText'>Some info</p>
                         </div>
                         <div class='cardFeature'>
-                            <p data-editable class='cardFeatureText'>#bug</p>
+                            <p class='cardFeatureText'>#bug</p>
                         </div>
                     </div>
                     <div id="" class='cardEditButton' onclick='cardEdit(this)'>
@@ -78,23 +78,14 @@ function nthIndex(str, query, n) {
 
 function cardEdit(el) {
     el.classList.toggle("change");
-    /*tmp = el.parentElement.children[0].children[0].innerHTML;
-    el.parentElement.children[0].children[0].innerHTML = "<input type='text' placeholder=" + tmp.slice(3, tmp.length-4) + " name='cardNameText'>";
-    console.log(tmp.slice(3, tmp.length-4));
-    console.log(tmp.slice(3));*/
-    /*$("body").on("click", "[data-editable]", function() {
-    $(".cardEditButton").on("click", function() {
-        var $element = $(this).parent().children();
-        console.log($element.attr("id"));
-        console.log("hlloe");
-        var $input = $('<textarea rows="3" cols="30"/>').val($element.text());
-        $element.replaceWith($input);
-        var save = function(){
-            var $p = $('<p data-editable />').text($input.val());
-            $input.replaceWith($p);
-        };
-        $input.one('blur', save).focus();
-    });*/
+    classes = el.className.split(" ");
+    if (classes[1] == "change") {
+        tmp = new DOMParser().parseFromString(el.parentElement.children[0].children[0].innerHTML, 'text/html');
+        el.parentElement.children[0].children[0].innerHTML = "<textarea rows='3' cols='30' style='align:left'>" + tmp.body.textContent + "</textarea>";
+    } else if (classes[1] != "change") {
+        tmp = el.parentElement.children[0].children[0].children[0].value;
+        el.parentElement.children[0].children[0].innerHTML = "<p>" + tmp + "</p>";
+    }
 }
 
 function allowDrop(ev) {
