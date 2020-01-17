@@ -79,12 +79,14 @@ function nthIndex(str, query, n) {
 function cardEdit(el) {
     el.classList.toggle("change");
     classes = el.className.split(" ");
-    if (classes[1] == "change") {
-        tmp = new DOMParser().parseFromString(el.parentElement.children[0].children[0].innerHTML, 'text/html');
-        el.parentElement.children[0].children[0].innerHTML = "<textarea rows='3' cols='30' style='align:left'>" + tmp.body.textContent + "</textarea>";
-    } else if (classes[1] != "change") {
-        tmp = el.parentElement.children[0].children[0].children[0].value;
-        el.parentElement.children[0].children[0].innerHTML = "<p>" + tmp + "</p>";
+    for (i = 0; i < el.parentElement.children[0].childElementCount; i++) {
+        if (classes[1] == "change") {
+            tmp = new DOMParser().parseFromString(el.parentElement.children[0].children[i].innerHTML, 'text/html');
+            el.parentElement.children[0].children[i].innerHTML = "<textarea rows='2' cols='30' style='align:left'>" + tmp.body.textContent + "</textarea>";
+        } else if (classes[1] != "change") {
+            tmp = el.parentElement.children[0].children[i].children[0].value;
+            el.parentElement.children[0].children[i].innerHTML = "<p>" + tmp + "</p>";
+        }
     }
 }
 
