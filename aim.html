@@ -5,7 +5,7 @@
     <title>ITS</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/universal.css">
-    <link rel="stylesheet" type="text/css" href="css/ticketing.css">
+    <link rel="stylesheet" type="text/css" href="css/aim.css">
     <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
 </head>
 <body onload="Clock()">
@@ -23,18 +23,15 @@
                   <li><a href="index.html">Index</a></li>
                   <li><a href="sorting.html">Sorting</a></li>
                   <li><a href="profile.html">Profile</a></li>
-                  <li><a id="active" href="ticketing.html">ITS</a></li>
-                  <li><a href="aim.html">Aim</a></li>
+                  <li><a href="ticketing.html">ITS</a></li>
+                  <li><a id="active" href="aim.html">Aim</a></li>
                 </ul>
             </div>
         </div>
-        <div id="buttonContainer">
-            <button id="createCard" class="button">Create Card</button>
-            <button id="increaseHeight" class="button">Height++</button>
-        </div>
         <div id="container">
-            <div id="container1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="container2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <p id="timer">Timer will start when you click the white square</p>
+            <p id="score">Score: 0</p>
+            <canvas id="canvas" width="500" height="500"></canvas>
         </div>
         <div id="footer">
             <p class="footer-link">Send me a mail <a href="mailto:">here's the address<span class="footer-hover">Click me!</span></a></p>
@@ -45,6 +42,6 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/clock.js"></script>
-    <script src="js/ticketing.js"></script>
+    <script src="js/aim.js"></script>
 </body>
 </html>

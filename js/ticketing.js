@@ -1,4 +1,4 @@
-var tmp, i, data, length, searchIndex, elementHeight;
+var tmp, i, data, length, searchIndex1, searchIndex2, elementHeight;
 var numberOfCards = 0;
 var templates = [], classes = [];
 var template = `<div id="" class='card' draggable='true' ondragstart='drag(event)'>
@@ -41,16 +41,14 @@ $(document).ready(function() {
     });
 });
 
-
-
 function generateTemplate() {
-    searchIndex = nthIndex(template, '"', 1) + 1;
-    tmp = template.substring(0, searchIndex);
+    searchIndex1 = nthIndex(template, '"', 1) + 1;
+    tmp = template.substring(0, searchIndex1);
     tmp += "card" + numberOfCards;
-    searchIndex = nthIndex(template, '"', 3) + 1;
-    tmp += template.substring(0, searchIndex);
+    searchIndex2 = nthIndex(template, '"', 3) + 1;
+    tmp += template.substring(searchIndex1, searchIndex2);
     tmp += "editCard" + numberOfCards;
-    tmp += template.substring(searchIndex);
+    tmp += template.substring(searchIndex2);
     templates[numberOfCards] = tmp;
     numberOfCards++;
 }
@@ -85,7 +83,7 @@ function cardEdit(el) {
             el.parentElement.children[0].children[i].innerHTML = "<textarea rows='2' cols='30' style='align:left'>" + tmp.body.textContent + "</textarea>";
         } else if (classes[1] != "change") {
             tmp = el.parentElement.children[0].children[i].children[0].value;
-            el.parentElement.children[0].children[i].innerHTML = "<p>" + tmp + "</p>";
+            el.parentElement.children[0].children[i].innerHTML = '<p class="cardNameText">' + tmp + "</p>";
         }
     }
 }
@@ -102,9 +100,13 @@ function drop(ev) {
     ev.preventDefault();
     data = ev.dataTransfer.getData("text/plain");
     try {
-        if (ev.target.className != "card" && ev.target.className != "cardNameText" && ev.target.className != "cardInfoText" && ev.target.className != "cardFeatureText" && ev.target.className != "cardEditButton" && ev.target.className != "editBar1" && ev.target.className != "editBar2" && ev.target.className != "editBar3") {
+        /*if (ev.target.className != "card" && ev.target.className != "cardNameText" && ev.target.className != "cardInfoText" && ev.target.className != "cardFeatureText" && ev.target.className != "cardEditButton" && ev.target.className != "editBar1" && ev.target.className != "editBar2" && ev.target.className != "editBar3") {}*/
+        if (ev.target.id == "container1" || ev.target.id == "container2") {
             ev.target.appendChild(document.getElementById(data));
-            /*ev.target.innerHTML += document.getElementById(data);*/
+        } else if (ev.target.className == "cardNameText") {
+            /*ev.target.parentElement.parentElement.parentElement.parentElement.appendChild(document.getElementById(data));*/
+            console.log(ev.target.parentElement.parentElement.parentElement.id);
+            ev.target.parentElement.parentElement.parentElement.parentElement.insertBefore(document.getElementById(data), ev.target.parentElement.parentElement.parentElement.parentElement.childNodes[1]);
         }
     }
     catch(error) {

@@ -7,4 +7,5 @@ If you'd be interested in messaging me go to [My Twitter](https://twitter.com/n0
 - Please go ahead and copy as much as you want from the files in this repository!
 - Updates will be pushed out "regularly" as long as I'm working on this portfolio
 
+##### Good day!
 :+1:
