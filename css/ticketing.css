@@ -18,20 +18,46 @@ border-right: 2px solid black;
 width: 49%;
 height: auto;
 min-height: 200px;
+/*  vertical-align: top; DOESNT SEEM TO DO ANYTHING LMAO    */
 }
 
 #container2 {
 border-left: 2px solid white;
 width: 49%;
 height: auto;
-min-height: 200px;
 }
 
 .card {
 display: flex;
+flex-direction: column;
 justify-content: space-between;
 padding: 5px;
 box-shadow: 0 0 5px #000000;
+}
+
+.topHover, .bottomHover {
+display: none;
+height: 10px;
+width: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+@-webkit-keyframes fadeIn {
+  0% { background-color: rgba(0, 0, 0, 0);
+       height: 0px; }
+  100% { background-color: rgba(0, 0, 0, 0.5);
+       height: 10px; }
+}
+
+@-webkit-keyframes fadeOut {
+  0% { background-color: rgba(0, 0, 0, 0.5);
+       height: 10px; }
+  100% { background-color: rgba(0, 0, 0, 0);
+       height: 0px; }
+}
+
+.cardTextContainer {
+display: flex;
 }
 
 .cardText {
